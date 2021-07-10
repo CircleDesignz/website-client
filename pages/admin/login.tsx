@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router'
 import { Button, Flex, Heading } from '@chakra-ui/react';
-import Callout from '../../components/common/callout';
+import Callout from '../../components/shared/callout';
 
 const Login = () => {
   const router = useRouter()

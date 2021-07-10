@@ -8,14 +8,13 @@ export const withAuth = (WrappedComponent: any) => {
     const router = useRouter();
     const authenticated = useStore((state) => state.authenticated);
 
-    // TODO: persist authentication status or check cookie is valid
     useEffect(() => {
       async function checkStatus() {
         if (!authenticated) {
           await axios
             .get('http://localhost:3001/api/auth', { withCredentials: true })
             .then((res) => {
-              if (res.status === 200) {
+              if (res.status === 204) {
                 useStore.setState({ authenticated: true });
               }
             })
