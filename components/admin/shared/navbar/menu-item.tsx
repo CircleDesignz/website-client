@@ -1,4 +1,4 @@
-import { As, Box, Heading, HStack, Icon, Spacer, Tag } from '@chakra-ui/react';
+import { As, Badge, Box, Heading, HStack, Icon, Spacer, Tag } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import React from 'react';
 
@@ -29,7 +29,7 @@ const MenuItem = ({ name, newPath, icon, tagValue }: Props) => {
         <Icon as={icon} />
         <Heading size="sm">{name}</Heading>
         <Spacer />
-        {tagValue !== undefined ? <Tag size="sm">{tagValue}</Tag> : null}
+        {tagValue !== undefined ? <Badge size="sm" variant="outline">{tagValue}</Badge> : null}
       </HStack>
     </Box>
   );

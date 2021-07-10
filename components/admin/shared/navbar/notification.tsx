@@ -1,7 +1,7 @@
 import React from 'react';
 import { Popover, PopoverContent, PopoverTrigger } from '@chakra-ui/popover';
 import { Heading, Icon, IconButton, PopoverHeader } from '@chakra-ui/react';
-import { IoNotifications } from 'react-icons/io5';
+import { IoNotifications, IoNotificationsOutline } from 'react-icons/io5';
 
 const Notifications = () => {
   return (
@@ -16,7 +16,7 @@ const Notifications = () => {
             <Icon
               boxSize={5}
               color="black"
-              as={IoNotifications}
+              as={IoNotificationsOutline}
               _hover={{ color: 'gray.400' }}
             />
           }

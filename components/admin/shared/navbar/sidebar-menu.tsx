@@ -17,6 +17,7 @@ import {
   IoHomeSharp,
   IoLayers,
   IoMenu,
+  IoMenuOutline,
   IoPersonSharp,
   IoPricetag,
   IoReader,
@@ -31,7 +32,7 @@ const SidebarMenu = () => {
     <>
       <PlainIconButton
         label="Menu"
-        icon={IoMenu}
+        icon={IoMenuOutline}
         onClick={onOpen}
         iconColor="black"
         iconBoxSize={5}
