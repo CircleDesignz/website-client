@@ -1,22 +1,25 @@
 import React from 'react';
 import { Popover, PopoverContent, PopoverTrigger } from '@chakra-ui/popover';
-import { Heading, PopoverHeader } from '@chakra-ui/react';
-import PlainIconButton from '../../../shared/icon-button-plain';
+import { Heading, Icon, IconButton, PopoverHeader } from '@chakra-ui/react';
 import { IoNotifications } from 'react-icons/io5';
 
-type Props = {
-  icon?: React.ReactElement | undefined;
-};
-
-const Notifications = ({ icon }: Props) => {
+const Notifications = () => {
   return (
     <Popover>
       <PopoverTrigger>
-        <PlainIconButton
-          label="Notifications"
-          iconBoxSize={5}
-          iconColor="black"
-          icon={IoNotifications}
+        <IconButton
+          aria-label="Notifications"
+          variant="ghost"
+          _hover={{ bg: 'transparent' }}
+          _active={{ bg: 'transparent' }}
+          icon={
+            <Icon
+              boxSize={5}
+              color="black"
+              as={IoNotifications}
+              _hover={{ color: 'gray.400' }}
+            />
+          }
         />
       </PopoverTrigger>
       <PopoverContent>
