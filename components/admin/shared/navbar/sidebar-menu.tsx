@@ -1,7 +1,5 @@
 import React from 'react';
 import {
-  Box,
-  Button,
   Container,
   Drawer,
   DrawerBody,
@@ -10,16 +8,23 @@ import {
   DrawerOverlay,
   VStack,
   useDisclosure,
+  Divider,
+  Heading,
 } from '@chakra-ui/react';
-import { IoLayers, IoLogOut, IoMenu } from 'react-icons/io5';
-import TaggedButton from '../../../shared/tagged-button';
+import {
+  IoBoat,
+  IoFolder,
+  IoHomeSharp,
+  IoLayers,
+  IoMenu,
+  IoPersonSharp,
+  IoPricetag,
+  IoReader,
+} from 'react-icons/io5';
 import PlainIconButton from '../../../shared/icon-button-plain';
+import MenuItem from './menu-item';
 
-type Props = {
-  icon?: React.ReactElement | undefined;
-};
-
-const SidebarMenu = ({ icon }: Props) => {
+const SidebarMenu = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
@@ -38,18 +43,58 @@ const SidebarMenu = ({ icon }: Props) => {
             <Container centerContent>(Circle Logo)</Container>
           </DrawerHeader>
           <DrawerBody>
-            <VStack spacing="20px" align="start" px={5}>
-              <Button
-                variant="unstyled"
-                textColor="white"
-                leftIcon={<IoLayers />}
-              >
-                Inventory
-              </Button>
-              <TaggedButton />
-              <Box>Hey</Box>
-              <Box>Hey</Box>
-              <Box>Hey</Box>
+            <VStack spacing="15px" align="start" px={5}>
+              <Divider />
+              <Heading size="md" color="white">
+                Pages
+              </Heading>
+              <MenuItem
+                name="Dashboard"
+                icon={IoHomeSharp}
+                newPath="/admin/dashboard"
+                tagValue={25}
+              />
+              <MenuItem
+                name="Inventory"
+                icon={IoLayers}
+                newPath="/admin/inventory"
+              />
+              <MenuItem
+                name="Catalog"
+                icon={IoPricetag}
+                newPath="/admin/catalog"
+                tagValue={32}
+              />
+              <MenuItem
+                name="Orders"
+                icon={IoReader}
+                newPath="/admin/orders"
+                tagValue={23}
+              />
+              <MenuItem
+                name="Customers"
+                icon={IoPersonSharp}
+                newPath="/admin/customers"
+                tagValue={4}
+              />
+              <MenuItem
+                name="Shipping"
+                icon={IoBoat}
+                newPath="/admin/shipping"
+              />
+              <Heading size="md" color="white">
+                Other
+              </Heading>
+              <MenuItem
+                name="Scheduler"
+                icon={IoFolder}
+                newPath="/admin/dashboard"
+              />
+              <MenuItem
+                name="Accounts"
+                icon={IoFolder}
+                newPath="/admin/dashboard"
+              />
             </VStack>
           </DrawerBody>
         </DrawerContent>

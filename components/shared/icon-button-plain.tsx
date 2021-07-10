@@ -24,6 +24,7 @@ const PlainIconButton = ({
       variant="ghost"
       onClick={onClick}
       _hover={{bg: "transparent"}}
+      _active={{ bg: "transparent "}}
       icon={
         <Icon
           boxSize={iconBoxSize}
