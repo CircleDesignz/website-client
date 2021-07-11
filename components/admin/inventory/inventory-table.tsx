@@ -6,11 +6,11 @@ import {
   IoDocumentOutline,
   IoEyeOutline,
   IoLayersOutline,
-  IoMenu,
+  IoLocationOutline,
 } from 'react-icons/io5';
 import DataTable from '../../shared/table/data-table';
 
-const InventoryTable = (props: any) => {
+const InventoryTable = () => {
   const data = React.useMemo(
     () => [
       {
@@ -18,6 +18,7 @@ const InventoryTable = (props: any) => {
         desc: 'Keyboard 1',
         group: 'Group A',
         stock: '4',
+        location: 'Main',
         state: 'Active',
       },
       {
@@ -25,6 +26,7 @@ const InventoryTable = (props: any) => {
         desc: 'Keyboard 1',
         group: 'Group A',
         stock: '4',
+        location: 'Main',
         state: 'Active',
       },
       {
@@ -32,6 +34,7 @@ const InventoryTable = (props: any) => {
         desc: 'Keyboard 1',
         group: 'Group A',
         stock: '4',
+        location: 'Main',
         state: 'Active',
       },
       {
@@ -39,6 +42,7 @@ const InventoryTable = (props: any) => {
         desc: 'Keyboard 1',
         group: 'Group A',
         stock: '4',
+        location: 'Main',
         state: 'Active',
       },
       {
@@ -46,6 +50,47 @@ const InventoryTable = (props: any) => {
         desc: 'Keyboard 1',
         group: 'Group A',
         stock: '4',
+        location: 'Main',
+        state: 'Active',
+      },
+      {
+        sku: 'ABC123',
+        desc: 'Keyboard 1',
+        group: 'Group A',
+        stock: '4',
+        location: 'Main',
+        state: 'Active',
+      },
+      {
+        sku: 'ABC123',
+        desc: 'Keyboard 1',
+        group: 'Group A',
+        stock: '4',
+        location: 'Main',
+        state: 'Active',
+      },
+      {
+        sku: 'ABC123',
+        desc: 'Keyboard 1',
+        group: 'Group A',
+        stock: '4',
+        location: 'Main',
+        state: 'Active',
+      },
+      {
+        sku: 'ABC123',
+        desc: 'Keyboard 1',
+        group: 'Group A',
+        stock: '4',
+        location: 'Main',
+        state: 'Active',
+      },
+      {
+        sku: 'ABC123',
+        desc: 'Keyboard 1',
+        group: 'Group A',
+        stock: '4',
+        location: 'Main',
         state: 'Active',
       },
     ],
@@ -58,7 +103,7 @@ const InventoryTable = (props: any) => {
         Header: () => (
           <HStack>
             <Icon as={IoBarcodeOutline} boxSize={5} />
-            <Heading size="xs" blue>
+            <Heading size="xs" color="cDarkBlue">
               SKU
             </Heading>
           </HStack>
@@ -69,7 +114,7 @@ const InventoryTable = (props: any) => {
         Header: () => (
           <HStack>
             <Icon as={IoDocumentOutline} boxSize={5} />
-            <Heading size="xs" color="#3c495e">
+            <Heading size="xs" color="cDarkBlue">
               Descriptor
             </Heading>
           </HStack>
@@ -80,7 +125,7 @@ const InventoryTable = (props: any) => {
         Header: () => (
           <HStack>
             <Icon as={IoLayersOutline} boxSize={5} />
-            <Heading size="xs" color="#3c495e">
+            <Heading size="xs" color="cDarkBlue">
               Group
             </Heading>
           </HStack>
@@ -91,7 +136,7 @@ const InventoryTable = (props: any) => {
         Header: () => (
           <HStack>
             <Icon as={IoAnalyticsOutline} boxSize={5} />
-            <Heading size="xs" color="#3c495e">
+            <Heading size="xs" color="cDarkBlue">
               Stock
             </Heading>
           </HStack>
@@ -101,8 +146,19 @@ const InventoryTable = (props: any) => {
       {
         Header: () => (
           <HStack>
+            <Icon as={IoLocationOutline} boxSize={5} />
+            <Heading size="xs" color="cDarkBlue">
+              Location
+            </Heading>
+          </HStack>
+        ),
+        accessor: 'location',
+      },
+      {
+        Header: () => (
+          <HStack>
             <Icon as={IoEyeOutline} boxSize={5} />
-            <Heading size="xs" color="#3c495e">
+            <Heading size="xs" color="cDarkBlue">
               Status
             </Heading>
           </HStack>
@@ -113,7 +169,7 @@ const InventoryTable = (props: any) => {
     []
   );
 
-  return <DataTable columns={columns} data={data} />;
+  return <DataTable size="sm" columns={columns} data={data} />;
 };
 
 export default InventoryTable;

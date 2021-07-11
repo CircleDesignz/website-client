@@ -16,7 +16,6 @@ import {
   IoFolder,
   IoHomeSharp,
   IoLayers,
-  IoMenu,
   IoMenuOutline,
   IoPersonSharp,
   IoPricetag,

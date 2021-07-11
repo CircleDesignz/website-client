@@ -14,16 +14,17 @@ import {
 type Props = {
   columns: any;
   data: any; // FIXME: generalize type for data
+  size?: string | undefined;
 };
 
-const DataTable = ({ columns, data }: Props) => {
+const DataTable = ({ columns, data, size }: Props) => {
   const tableInstance = useTable({ columns, data });
 
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     tableInstance;
 
   return (
-    <Table {...getTableProps()}>
+    <Table size={size} {...getTableProps()}>
       <Thead>
         {headerGroups.map((headerGroup) => {
           const { key, ...restHeaderGroupProps } =
@@ -47,7 +48,11 @@ const DataTable = ({ columns, data }: Props) => {
           prepareRow(row);
           const { key, ...restOfRowProps } = row.getRowProps();
           return (
-            <Tr hover key={key} {...restOfRowProps}>
+            <Tr
+              _hover={{ background: 'gray.100' }}
+              key={key}
+              {...restOfRowProps}
+            >
               {row.cells.map((cell) => {
                 const { key, ...restOfCellProps } = cell.getCellProps();
                 return (
