@@ -4,6 +4,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 import 'focus-visible/dist/focus-visible';
 import { Global, css } from '@emotion/react';
 import create from 'zustand';
+import { globalTheme } from '../lib/themes/global.themes';
 
 const GlobalStyles = css`
   .js-focus-visible :focus:not([data-focus-visible-added]) {
@@ -18,7 +19,7 @@ export const useStore = create(() => ({
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={globalTheme}>
       <Global styles={GlobalStyles} />
       <Component {...pageProps} />
     </ChakraProvider>
