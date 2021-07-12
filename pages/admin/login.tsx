@@ -2,6 +2,7 @@ import React from 'react';
 import { useRouter } from 'next/router'
 import { Button, Flex, Heading } from '@chakra-ui/react';
 import Callout from '../../components/shared/callout';
+import { BOX_BORDER_WIDTH } from '../../lib/themes/constants';
 
 const Login = () => {
   const router = useRouter()
@@ -16,7 +17,7 @@ const Login = () => {
         <Flex
           borderWidth="1px"
           borderColor="black"
-          borderRadius={4}
+          borderRadius={BOX_BORDER_WIDTH}
           direction="column"
           p={8}
         >

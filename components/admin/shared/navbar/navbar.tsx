@@ -1,6 +1,6 @@
 import React from 'react';
-import { Box, Flex, Heading, Spacer } from '@chakra-ui/layout';
-import { Divider, Icon } from '@chakra-ui/react';
+import { Box, Flex, Heading, HStack, Spacer } from '@chakra-ui/layout';
+import { Avatar, Divider, Icon } from '@chakra-ui/react';
 import LogoutButton from './logout';
 import SidebarMenu from './sidebar-menu';
 import Notifications from './notification';
@@ -25,6 +25,16 @@ const Navbar = () => {
           </Heading>
         </Box>
         <Spacer />
+        <Box p={2}>
+          <HStack>
+            <Avatar
+              size="xs"
+              name="T"
+              src="https://avatars.githubusercontent.com/u/44934000?v=4"
+            />
+            <Heading size="xs">Coleman</Heading>
+          </HStack>
+        </Box>
         <Box p={2}>
           <Notifications />
         </Box>

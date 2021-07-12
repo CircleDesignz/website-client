@@ -43,7 +43,7 @@ const SidebarMenu = () => {
             <Container centerContent>(Circle Logo)</Container>
           </DrawerHeader>
           <DrawerBody>
-            <VStack spacing="15px" align="start" px={5}>
+            <VStack spacing="20px" align="start" px={5}>
               <Divider />
               <Heading size="md" color="white">
                 Pages

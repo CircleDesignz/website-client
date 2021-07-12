@@ -2,12 +2,18 @@ import {
   Badge,
   Box,
   Button,
+  Container,
   Heading,
   HStack,
   Input,
   InputGroup,
   InputRightElement,
   Spacer,
+  Stat,
+  StatArrow,
+  StatGroup,
+  StatLabel,
+  StatNumber,
 } from '@chakra-ui/react';
 import React from 'react';
 import {
@@ -28,14 +34,13 @@ const Inventory = () => {
           Inventory
         </Heading>
         <HStack mb={5}>
-          <Button variant="outline" size="sm" leftIcon={<IoFilterOutline />}>
+          <Button background="black" color="white" size="sm" leftIcon={<IoFilterOutline />}>
             Filter
           </Button>
           <Box w="25%">
             <InputGroup>
               <Input
                 size="sm"
-                variant="flushed"
                 focusBorderColor="#556785"
                 placeholder="Search"
               />
@@ -44,14 +49,16 @@ const Inventory = () => {
           <Spacer />
           <HStack direction="column-reverse">
             <Button
-              variant="outline"
+              background="black"
+              color="white"
               size="sm"
               leftIcon={<IoArrowDownCircleOutline />}
             >
               Import
             </Button>
             <Button
-              variant="outline"
+              background="black"
+              color="white"
               size="sm"
               leftIcon={<IoArrowUpCircleOutline />}
             >
@@ -60,7 +67,28 @@ const Inventory = () => {
           </HStack>
         </HStack>
         <InventoryTable />
-        <Heading mt="25px" size="md">Data</Heading>
+        <StatGroup mt={10} >
+          <Stat>
+            <StatLabel>Test</StatLabel>
+            <StatNumber>0.00</StatNumber>
+            <StatArrow type="increase" />
+          </Stat>
+          <Stat>
+            <StatLabel>Test</StatLabel>
+            <StatNumber>0.00</StatNumber>
+            <StatArrow type="increase" />
+          </Stat>
+          <Stat>
+            <StatLabel>Test</StatLabel>
+            <StatNumber>0.00</StatNumber>
+            <StatArrow type="increase" />
+          </Stat>
+          <Stat>
+            <StatLabel>Test</StatLabel>
+            <StatNumber>0.00</StatNumber>
+            <StatArrow type="increase" />
+          </Stat>
+        </StatGroup>
       </Box>
     </>
   );

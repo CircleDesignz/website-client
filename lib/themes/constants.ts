@@ -1,0 +1,1 @@
+export const BOX_BORDER_WIDTH = 4;
